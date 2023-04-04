@@ -12,7 +12,6 @@ teacher_assignments_resources = Blueprint('teacher_assignments_resources', __nam
 @decorators.auth_principal
 def list_assignments(p):
     """Returns list of assignments"""
-
     teachers_assignments = Assignment.get_assignments_to_teacher(p.teacher_id)
     teachers_assignments_dump = AssignmentSchema().dump(teachers_assignments, many=True)
     return APIResponse.respond(data=teachers_assignments_dump)
@@ -22,9 +21,6 @@ def list_assignments(p):
 @decorators.auth_principal
 def grade_assignments(p, data):
     """grade an assignments"""
-
-    import pdb
-    pdb.set_trace()
 
     grade_schema_load = AssignmentGradeSchema().load(data)
     graded_assignment = Assignment.set_grade(
