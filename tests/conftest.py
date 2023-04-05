@@ -1,11 +1,15 @@
 import pytest
 import json
-from tests import app
+from tests import app, User
 
 
 @pytest.fixture
 def client():
     return app.test_client()
+
+@pytest.fixture
+def user():
+    return User()
 
 
 @pytest.fixture
