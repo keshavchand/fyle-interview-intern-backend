@@ -54,3 +54,7 @@ pytest -vvv -s tests/
 # pytest --cov
 # open htmlcov/index.html
 ```
+or
+```
+bash runtest.sh
+```
